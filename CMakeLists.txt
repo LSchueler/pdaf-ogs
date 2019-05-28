@@ -3,10 +3,10 @@
 ###################
 
 cmake_minimum_required(VERSION 3.10)
-
-set(PDAF_FLAGS "-fPIC")
 project(OGS-PDAF Fortran)
 
-add_definitions(${PDAF_FLAGS})
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(BUILD_SHARED_LIBS ON)
 
+add_subdirectory(pdaf_base/src)
 add_subdirectory(pdaf_user)
