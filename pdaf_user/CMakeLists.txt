@@ -1,7 +1,5 @@
 file(GLOB PDAF_USER_SOURCES *.F90)
 
-set(CMAKE_Fortran_COMPILER "mpifort")
-
 find_package(MPI REQUIRED)
 find_package(LAPACK REQUIRED)
 find_package(BLAS REQUIRED)
