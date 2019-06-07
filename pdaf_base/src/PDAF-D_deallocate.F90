@@ -76,14 +76,14 @@ SUBROUTINE PDAF_deallocate()
      IF (dim_bias_p > 0) THEN
         DEALLOCATE(bias)
      ENDIF
-     
+
   ELSE on_filterpe
      ! Model-PEs that are not Filter-PEs only need an array for the local ensemble
      ! if they participate in the coupling communication
 
      ! Allocate partial ensemble on model-only PEs that do coupling communication
      IF (COMM_couple /= MPI_COMM_NULL) THEN
-        DEALLOCATE(eofV)
+        IF (ALLOCATED(eofV)) DEALLOCATE(eofV)
      END IF
 
   END IF on_filterpe
