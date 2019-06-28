@@ -66,7 +66,7 @@ SUBROUTINE PDAF_deallocate()
      DEALLOCATE(eofU)
 
      ! Allocate full ensemble on filter-PEs
-     DEALLOCATE(eofV)
+     if (allocated(eofv)) DEALLOCATE(eofV)
 
      ! Allocate array for past ensembles for smoothing on filter-PEs
      IF (dim_lag > 0) THEN
