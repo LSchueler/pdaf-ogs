@@ -161,6 +161,7 @@ SUBROUTINE init_pdaf(ens_no)
 
   !call init_pdaf_parse()
   dim_ens = ens_no
+  n_modeltasks = ens_no
 
 ! *** Initial Screen output ***
 ! *** This is optional      ***
